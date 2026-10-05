@@ -1,0 +1,808 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+}
+
+body {
+  background: #f4f1e9;
+  color: #17263a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   SITE
+========================= */
+
+.site {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 35px;
+
+  border: none !important;
+  outline: none !important;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #bfc3c2;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #17263a;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.navbar nav a {
+  position: relative;
+
+  padding-bottom: 5px;
+
+  font-size: 13px;
+  color: #45515e;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #17263a;
+}
+
+.navbar nav a.active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background: #17263a;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 570px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  position: relative;
+
+  border-bottom: 1px solid #bfc3c2;
+}
+
+.hero-text {
+  padding-left: 70px;
+  padding-bottom: 20px;
+}
+
+.small-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 14px 0 25px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(65px, 8vw, 105px);
+  line-height: .88;
+
+  letter-spacing: -5px;
+
+  color: #000;
+}
+
+.hero-text p {
+  max-width: 450px;
+
+  font-size: 15px;
+  color: #59636e;
+
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+
+  padding: 11px 20px;
+
+  border: 1px solid #17263a;
+
+  font-size: 13px;
+
+  transition: .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  background: #365873;
+  color: #fff;
+  border-color: #365873;
+}
+
+
+/* =========================
+   HERO PHOTO
+========================= */
+
+.hero-photo {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+
+/* FRAME */
+
+.photo-frame {
+  position: relative;
+
+  width: 350px;
+  height: 410px;
+
+  padding: 15px;
+
+  background: #e8c598;
+
+  overflow: hidden;
+
+  transform: rotate(2deg);
+
+  box-shadow: 0 15px 30px rgba(35, 43, 49, .12);
+}
+
+
+/* TAPE */
+
+.photo-frame::before {
+  content: '';
+
+  position: absolute;
+
+  width: 85px;
+  height: 25px;
+
+  top: 5px;
+  left: 50%;
+
+  background: #2e2200;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  opacity: .8;
+
+  z-index: 3;
+}
+
+
+/* AREA FOTO */
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #e9e5db;
+
+  position: relative;
+}
+
+
+/* FOTO HOME */
+
+.profile-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+}
+
+
+/* CATATAN FOTO */
+
+.photo-note {
+  position: absolute;
+
+  right: 30px;
+  bottom: 50px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =========================
+   SIDE NOTE
+========================= */
+
+.side-note {
+  position: absolute;
+
+  left: 0;
+  top: 100px;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #64717b;
+
+  transform: rotate(-4deg);
+}
+
+.side-note.right {
+  left: auto;
+  right: 0;
+  top: 110px;
+
+  transform: rotate(4deg);
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 70px 1fr;
+
+  padding: 50px 0;
+
+  border-bottom: 1px solid #bfc3c2;
+}
+
+.section-number {
+  font-family: 'DM Mono', monospace;
+  font-size: 17px;
+
+  color: #66829a;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  line-height: 1;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content {
+  padding-right: 100px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+}
+
+.about-text p {
+  margin-bottom: 14px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+
+  color: #4c5660;
+}
+
+.handwriting {
+  margin-top: 25px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: italic;
+
+  color: #516879;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =========================
+   BIO
+========================= */
+
+.bio {
+  padding-left: 35px;
+
+  border-left: 1px solid #aeb5b6;
+}
+
+.bio div {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid #d5d6d1;
+}
+
+.bio span {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.bio b {
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #354250;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-content {
+  width: 100%;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.section-heading h2 {
+  margin-bottom: 25px;
+}
+
+.section-heading span {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+
+  color: #596874;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.gallery-item {
+  min-width: 0;
+}
+
+.gallery-image {
+  position: relative;
+
+  width: 100%;
+  height: 145px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 12px;
+
+  color: #fff;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+
+
+/* FOTO GALERI */
+
+.gallery-photo {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  z-index: 0;
+}
+
+
+/* TEKS DI ATAS FOTO */
+
+.gallery-image span {
+  position: relative;
+
+  z-index: 2;
+
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+}
+
+.gallery-item p {
+  margin-top: 8px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+
+  color: #46515c;
+}
+
+
+/* =========================
+   GALLERY OVERLAY
+========================= */
+
+.gallery-image::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, .35),
+    transparent 55%
+  );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  align-items: center;
+}
+
+.contact-content {
+  display: grid;
+
+  grid-template-columns: 160px 1fr 1fr;
+
+  gap: 25px;
+
+  align-items: center;
+}
+
+.contact-content h2 {
+  margin: 0;
+}
+
+.contact-description {
+  max-width: 300px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+
+  color: #56606b;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 12px;
+
+  color: #344250;
+}
+
+.contact-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #89949a;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+
+.contact-note {
+  left: auto;
+  right: 0;
+  top: 35px;
+
+  transform: rotate(3deg);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  min-height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+
+  color: #68737c;
+}
+
+footer div {
+  display: flex;
+  gap: 25px;
+}
+
+footer a:hover {
+  color: #17263a;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .site {
+    padding: 0 25px;
+  }
+
+  .navbar {
+    height: auto;
+
+    padding: 25px 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .navbar nav {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    padding: 70px 0;
+  }
+
+  .hero-text {
+    padding-left: 40px;
+    margin-bottom: 70px;
+  }
+
+  .hero-photo {
+    min-height: 450px;
+  }
+
+  .side-note {
+    display: none;
+  }
+
+  .section {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .about-content {
+    padding-right: 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .bio {
+    padding: 25px 0 0;
+
+    border-left: none;
+    border-top: 1px solid #aeb5b6;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 25px 0;
+
+    gap: 15px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+  .site {
+    padding: 0 15px;
+  }
+
+  .navbar nav {
+    gap: 15px;
+  }
+
+  .navbar nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-text {
+    padding-left: 10px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+    letter-spacing: -3px;
+  }
+
+  .hero-photo {
+    min-height: 390px;
+  }
+
+  .photo-frame {
+    width: 280px;
+    height: 340px;
+
+    padding: 12px;
+  }
+
+  .photo-note {
+    right: 5px;
+    bottom: 25px;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 40px 0;
+  }
+
+  .section-number {
+    margin-bottom: 5px;
+  }
+
+  .section h2 {
+    font-size: 34px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-image {
+    height: 120px;
+  }
+
+  .bio div {
+    grid-template-columns: 105px 1fr;
+  }
+
+  footer div {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
